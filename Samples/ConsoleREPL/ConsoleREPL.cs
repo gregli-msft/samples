@@ -130,19 +130,19 @@ namespace PowerFxHostSamples
                 }
 
                 if (valueSeen == recordsSeen)
-                    return ("[" + resultString + "]");
+                    return ("[ " + resultString + " ]");
                 else
                 {
                     // no, table is more complex that a single column of Value fields,
                     //   requires full treatment
-                    resultString = "Table(";
+                    resultString = "Table( ";
                     separator = "";
                     foreach (var row in table.Rows)
                     {
                         resultString += separator + PrintResult(row.Value);
                         separator = ", ";
                     }
-                    resultString += ")";
+                    resultString += " )";
                 }
             }
             else if (value is ErrorValue errorValue)
